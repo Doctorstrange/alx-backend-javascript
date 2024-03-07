@@ -10,12 +10,12 @@ async function handleProfileSignup(firstName, lastName, fileName) {
     const uploadUserResult = await uploadPhotoPromise;
 
     return [
-      { status: 'fulfilled', value: signUpUserResult },
-      { status: 'fulfilled', value: uploadUserResult }
+      { status: 'status_of_the_promise', value: signUpUserResult },
+      { status: 'status_of_the_promise', value: uploadUserResult }
     ];
   } catch (error) {
     return [
-      { status: 'rejected', value: error }
+      { status: 'status_of_the_promise', value: error }
     ];
   }
 }
