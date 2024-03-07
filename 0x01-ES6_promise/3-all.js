@@ -8,7 +8,8 @@ function handleProfileSignup() {
         resolve();
       })
       .catch(() => {
-        reject(new Error('Signup system offline'));
+        console.log('Signup system offline');
+        reject();
       });
   });
 }
