@@ -4,7 +4,8 @@ function handleProfileSignup() {
   return new Promise((resolve, reject) => {
     Promise.all([uploadPhoto(), createUser()])
       .then(([photoResponse, userResponse]) => {
-        resolve(`${photoResponse.body} ${userResponse.firstName} ${userResponse.lastName}`);
+        console.log(photoResponse.body, userResponse.firstName, userResponse.lastName);
+        resolve();
       })
       .catch(() => {
         reject(new Error('Signup system offline'));
