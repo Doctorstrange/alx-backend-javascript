@@ -30,6 +30,17 @@ interface Teacher {
     numberOfReports: 5,
   };
 
+  interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+  }
+  
+  function printTeacher(firstName: string, lastName: string): string {
+    const firstLetter = firstName.charAt(0).toUpperCase();
+
+    return `${firstLetter}. ${lastName}`;
+  }
+  
+
   
   console.log(teacher3);
   console.log(director1);
