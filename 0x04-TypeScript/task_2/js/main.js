@@ -34,3 +34,16 @@ function createEmployee(salary) {
         return new Director();
     }
 }
+function isDirector(employee) {
+    return employee.workDirectorTasks !== undefined;
+}
+// Function executeWork
+function executeWork(employee) {
+    if (isDirector(employee)) {
+        console.log(employee.workDirectorTasks());
+    }
+    else {
+        console.log(employee.workTeacherTasks());
+    }
+}
+

@@ -47,3 +47,19 @@ interface DirectorInterface {
     }
   }
   
+
+
+
+
+  function isDirector(employee: Director | Teacher): employee is Director {
+    return (employee as Director).workDirectorTasks !== undefined;
+  }
+  
+  // Function executeWork
+  function executeWork(employee: Director | Teacher): void {
+    if (isDirector(employee)) {
+      console.log(employee.workDirectorTasks());
+    } else {
+      console.log(employee.workTeacherTasks());
+    }
+  }
