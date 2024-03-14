@@ -41,6 +41,36 @@ interface Teacher {
   }
   
 
+  // 4. Writing a class
+  interface StudentConstructorArgs {
+    firstName: string;
+    lastName: string;
+  }
+
+  interface StudentClassInterface {
+    new (args: StudentConstructorArgs): StudentClass; 
+    workOnHomework(): string;
+    displayName(): string;
+  }
+  
+  class StudentClass implements StudentClassInterface {
+    private firstName: string;
+    private lastName: string;
+  
+    constructor(args: StudentConstructorArgs) {
+      this.firstName = args.firstName;
+      this.lastName = args.lastName;
+    }
+  
+    workOnHomework(): string {
+      return "Currently working";
+    }
+  
+    displayName(): string {
+      return this.firstName;
+    }
+  }
+
   
   console.log(teacher3);
   console.log(director1);
