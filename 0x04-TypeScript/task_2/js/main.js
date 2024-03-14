@@ -34,16 +34,27 @@ function createEmployee(salary) {
         return new Director();
     }
 }
+// 6. Creating functions specific to employees 
 function isDirector(employee) {
     return employee.workDirectorTasks !== undefined;
 }
-// Function executeWork
 function executeWork(employee) {
     if (isDirector(employee)) {
         console.log(employee.workDirectorTasks());
     }
     else {
         console.log(employee.workTeacherTasks());
+    }
+}
+function teachClass(todayClass) {
+    if (todayClass === 'Math') {
+        console.log('Teaching Math');
+    }
+    else if (todayClass === 'History') {
+        console.log('Teaching History');
+    }
+    else {
+        console.log('Invalid class');
     }
 }
 

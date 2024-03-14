@@ -50,12 +50,11 @@ interface DirectorInterface {
 
 
 
-
+// 6. Creating functions specific to employees 
   function isDirector(employee: Director | Teacher): employee is Director {
     return (employee as Director).workDirectorTasks !== undefined;
   }
-  
-  // Function executeWork
+
   function executeWork(employee: Director | Teacher): void {
     if (isDirector(employee)) {
       console.log(employee.workDirectorTasks());
@@ -63,3 +62,18 @@ interface DirectorInterface {
       console.log(employee.workTeacherTasks());
     }
   }
+
+
+
+
+// 7. String literal types 
+type Subjects = "Math" | "History";
+function teachClass(todayClass: Subjects): void {
+  if (todayClass === 'Math') {
+    console.log('Teaching Math');
+  } else if (todayClass === 'History') {
+    console.log('Teaching History');
+  } else {
+    console.log('Invalid class');
+  }
+}
